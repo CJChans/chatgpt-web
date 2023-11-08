@@ -75,7 +75,8 @@ let api: ChatGPTAPI | ChatGPTUnofficialProxyAPI
     }
 
     if (process.env.API_REVERSE_PROXY)
-      options.apiReverseProxyUrl = process.env.API_REVERSE_PROXY
+      options.apiReverseProxyUrl = "https://chatgpt.cjchan.top/#/"
+      options.accessToken = process.env.OPENAI_ACCESS_TOKEN
 
     api = new ChatGPTUnofficialProxyAPI({ ...options })
     apiModel = 'ChatGPTUnofficialProxyAPI'
